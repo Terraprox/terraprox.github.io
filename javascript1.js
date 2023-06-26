@@ -1,15 +1,3 @@
-/*const button = document.getElementById("button");
-button.innerHTML = "click me bruh";
-
-function nextpage () { 
-    console.log(50+50 + "WOW!!!");
-    button.style.backgroundColor = "rgba(0, 0, 0, 1)";
-    button.innerHTML = "Clicked";
-    setTimeout(1000);
-    button.innerHTML = "YOU CLICKED ME WOW!!!";
-}
-
-button.addEventListener("click", nextpage())*/
 const ver = document.querySelector('.bg');
 ver.classList.add('fade-in');
 
