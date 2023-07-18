@@ -19,13 +19,13 @@ function updateclock() {
     clock.innerHTML = hours + ":" + minutes + ":" + seconds;
 
     // determines what season it currently is (just a draft as seasons are debatable and have vaguely defined timeframes)
-    if (monthnum == 2 || 3 || 4) {
+    if (monthnum == 2 || monthnum == 3 || monthnum == 4) {
         season = "Spring";
-    } else if (monthnum == 5 || 6 || 7) {
+    } else if (monthnum == 5 || monthnum == 6 || monthnum == 7) {
         season = "Summer";
-    } else if (monthnum == 8 || 9 || 10) {
+    } else if (monthnum == 8 || monthnum == 9 || monthnum == 10) {
         season = "Autumn";
-    } else if (monthnum == 11 || 0 || 1) {
+    } else if (monthnum == monthnum == 11 || monthnum == 0 || monthnum == 1) {
         season = "Winter";
     }
 
