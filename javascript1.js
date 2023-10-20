@@ -28,7 +28,7 @@ button3.textContent = "Pause";
 const playcontainer = document.querySelector("#playcontainer");
 playcontainer.appendChild(button2);
 
-const lofi1 = new Audio("Audio/meh lofi edit.mp3");
+lofi1 = new Audio("Audio/meh lofi edit.mp3");
 
 button2.addEventListener("click", play);
 function play() {
@@ -36,9 +36,10 @@ function play() {
     lofi1.play();
 }
 
-const volumecontrol = document.querySelector("#volumecontrol");
+var volumecontrol = document.querySelector("#volumecontrol input[value='50']");
 volumecontrol.addEventListener("input", function() {
-    lofi1.volume = volumecontrol.value / 100;
+    var volumecontrolvolume = parseFloat(volumecontrol.value) / 100;
+    lofi1.volume = volumecontrolvolume;
 });
 
 button3.addEventListener("click", pause);
@@ -49,3 +50,35 @@ function pause() {
 
 const pausecontainer = document.querySelector("#pausecontainer");
 pausecontainer.appendChild(button3);
+
+const musicplayer = document.getElementById("musicplayer");
+
+
+var songs = [
+    {title: "Lo-Fi 1", artist: "Terraprox", src: "Audio/meh lofi edit.mp3"},    //1
+    {title: "...", artist: "...", src: "..."},                                  //2
+    //
+]
+
+const songlist = document.getElementById("songlist");
+
+songlist.innerHTML = ""; // clears the existing listitems
+
+function player(index) {
+    const song = songs[index];
+    audioplayer.src = song.src;
+    audioplayer.play();
+}
+
+songs.forEach((song, index) => {
+    let listitem = document.createElement("li");
+    listitem.textContent = '${song.title} | ${song.artist}';
+
+    listitem.addEventListener("click", () => {
+        player(index); // play/pause
+    });
+
+    songlist.appendChild(listitem);
+})
+
+const audioplayer = document.getElementById("audioplayer");

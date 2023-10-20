@@ -13,3 +13,10 @@ button.addEventListener("mouseout", reset);
 function reset () {
     button.innerHTML = "Music";
 }
+
+const menubutton = document.createElement("menubutton");
+menubutton.type = "menu";
+menubutton.innerHTML = '<img src="Images/Hamburger Icon.png">'
+const menubuttonarea = document.querySelector("#menubuttonarea");
+menubuttonarea.appendChild(menubutton);
+menubutton.addEventListener();

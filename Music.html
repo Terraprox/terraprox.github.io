@@ -2,157 +2,7 @@
 <html lang="en"> 
 <head>
     <script defer src="javascript1.js"></script>
-    <style>
-        body, html {
-            height: 100%;
-            background-color: rgb(0,0,0);
-            overflow: hidden;
-            margin: 0;
-            padding: 0;
-            font-family: Verdana;
-        }
-        #clock {
-            font-size: 300%;
-            color: black;
-            top: 50%;
-            left: 50%;
-            z-index: 2;
-            position: absolute;
-        }
-        #month {
-        font-size: 300%;
-        color: black;
-        top: 40%;
-        left: 60%;
-        z-index: 2;
-        position: absolute;
-        align-items: center;
-        }
-        #year {
-            font-size: 300%;
-            color: black;
-            top: 45%;
-            left: 60%;
-            z-index: 2;
-            position: absolute;
-            align-items: center;
-        }
-        .bg {
-            background-image: url("Images/retro.gif");
-            filter: blur(12px);
-            height: 100%;
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 0.1;
-            z-index: -2;
-            transition: opacity 0.3s ease-in-out;
-        }
-        .bg.fade-in {
-            opacity: 0.7
-        }
-        h1 {
-            user-select: none;
-            color: rgba(215, 244, 236, 0.5);
-            font-size: 500%;
-            z-index: 1;
-            position: absolute;
-            top: 5%;
-            left: 50%;
-            transform : translate(-50%, -50%);
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 1);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-            backdrop-filter: blur(50px) brightness(100%);
-            background-color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 30px rgba(0,0,0, 0.5);
-            border-radius: 25px;
-        }
-        button {
-            font-size: 300%;
-            color: rgba(215, 244, 236, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-            width: 400px;
-            height: 100px;
-            position: absolute;
-            transition: background-color 0.3s ease-out, color 0.3s ease-out;
-            background-color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            align-items: center;
-        }
-        #buttonarea {
-            top: 50%;
-            left: 50%;
-            position: absolute;
-            z-index: 2;
-        }
-        button:hover {
-          color: rgba(183, 208, 200, 0.6);
-          background-color: rgba(0, 0, 0, 0.1);
-          text-shadow:  0 0 20px rgba(255, 255, 255, 0.5);
-        }
-        button2 {
-            z-index: 2;
-        }
-        button3 {
-            z-index: 2;
-        }
-        #playcontainer {
-            user-select: none;
-            top:30%;
-            left: 30%;
-            position: absolute;
-            z-index: 2;
-            font-size: 300%;
-            color: rgba(215, 244, 236, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-            position: absolute;
-            transition: background-color 0.3s ease-out, color 0.3s ease-out;
-            background-color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            align-items: center;
-        }
-        #pausecontainer {
-            user-select: none;
-            top:30%;
-            left: 15%;
-            position: absolute;
-            z-index: 2;
-            font-size: 300%;
-            color: rgba(215, 244, 236, 0.5);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            border-radius: 20px;
-            padding-top: 15px;
-            padding-bottom: 15px;
-            padding-left: 20px;
-            padding-right: 20px;
-            position: absolute;
-            transition: background-color 0.3s ease-out, color 0.3s ease-out;
-            background-color: rgba(255, 255, 255, 0.1);
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-            align-items: center;
-        }
-        #volumecontrol {
-            top: 20%;
-            left: 20%;
-            position: absolute;
-        }
-    </style>
+    <link rel="stylesheet" href="music.css">
 </head>
     <title>Wow so cool</title>
 <body>
@@ -161,11 +11,17 @@
         Music
     </h1>
     <div id="buttonarea"></div>
+
     <div id="playcontainer"></div>
-    <div id="pausecontainer">
+    <div id="pausecontainer"></div>
+
+    <div id="musicplayer">
+        <ul id="songlist"></ul>
+        <audio id="audioplayer"></audio>
+        <div id="volumecontrol">
+            <input type="range" min="0" max="100" value="50">
+        </div>
     </div>
-    <div id="volumecontrol">
-        <input type="range" min="0" max="100" value="50">
-    </div>
+
 </body>
 </html>
