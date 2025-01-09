@@ -2,4 +2,4 @@
 
 ### Features of the website
 - 6 randomized backgrounds gifs with aesthetic colors
-- A clock (**_real special i know_**)
+- A clock **_(real special i know)_**
